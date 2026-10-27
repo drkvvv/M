@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Joyeux anniversaire Mymy 💙</title>
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#eef5ff;--card:#ffffff;--ink:#14284b;--soft:#4a6591;--accent:#2f6fed;--accent2:#9cc2ff;--line:#cfe0fb;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#0b1630;--card:#13244a;--ink:#eaf2ff;--soft:#a9c0ea;--accent:#6ea4ff;--accent2:#2a4a8c;--line:#26427c;}
+}
+:root[data-theme="dark"]{--bg:#0b1630;--card:#13244a;--ink:#eaf2ff;--soft:#a9c0ea;--accent:#6ea4ff;--accent2:#2a4a8c;--line:#26427c;}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Georgia,"Times New Roman",serif;line-height:1.6}
+main{max-width:640px;margin:0 auto;padding:0 18px 60px}
+section{margin:56px 0}
+h1,h2{font-weight:normal;margin:0 0 14px;text-align:center}
+h1{font-size:clamp(2.2rem,9vw,3.4rem);color:var(--accent)}
+h2{font-size:1.7rem}
+h2::after{content:"🌷";display:block;font-size:1rem;margin-top:4px}
+p{margin:0 0 12px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;box-shadow:0 6px 24px rgba(47,111,237,.10)}
+button{font:inherit;cursor:pointer}
+
+/* Intro appel */
+#intro{min-height:90vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:16px}
+.phone{width:min(340px,100%);padding:28px 20px;border-radius:28px;background:linear-gradient(160deg,#1c3f87,#0b1c44);color:#fff;box-shadow:0 12px 36px rgba(20,40,90,.35)}
+.phone small{opacity:.75;letter-spacing:.12em;text-transform:uppercase;font-size:.7rem}
+.phone .who{font-size:2rem;margin:8px 0 2px}
+.ring{font-size:2.6rem;animation:shake 1s infinite}
+@keyframes shake{0%,100%{transform:rotate(0)}20%{transform:rotate(-14deg)}40%{transform:rotate(14deg)}60%{transform:rotate(-8deg)}}
+.answer{margin-top:18px;border:0;border-radius:999px;padding:12px 26px;background:#34c759;color:#fff;font-size:1.05rem}
+#hero{display:none;text-align:center}
+#hero.show{display:block;animation:fade 1s}
+@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.sub{color:var(--soft);font-style:italic}
+main.locked section:not(#intro){display:none}
+
+/* Message */
+.msg p:first-child::first-letter{font-size:2.4rem;color:var(--accent);float:left;line-height:1;padding-right:6px}
+.sign{text-align:right;color:var(--accent);font-style:italic}
+
+/* Frise */
+.tl{position:relative;margin-left:14px;padding-left:24px;border-left:3px solid var(--accent2)}
+.tl .ev{position:relative;margin-bottom:22px}
+.tl .ev::before{content:"";position:absolute;left:-34px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--accent);border:3px solid var(--bg)}
+.tl b{display:block;color:var(--accent)}
+
+/* Raisons */
+.reasons{display:grid;gap:10px}
+.reasons div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px 16px}
+.reasons span{color:var(--accent);font-weight:bold;margin-right:8px}
+
+/* Vidéos */
+.vid{display:grid;gap:12px}
+video{width:100%;display:block;border-radius:16px;background:#000}
+.slot{border:2px dashed var(--accent2);border-radius:16px;padding:26px 16px;text-align:center;color:var(--soft)}
+
+/* Tulipes */
+#garden{display:flex;flex-wrap:wrap;gap:6px;justify-content:center;margin:12px 0}
+.tulip{border:0;background:none;font-size:2.6rem;padding:6px;transition:transform .3s}
+.tulip.open{animation:pop .6s forwards}
+@keyframes pop{0%{transform:scale(.6)}60%{transform:scale(1.35) rotate(-6deg)}100%{transform:scale(1)}}
+#count{text-align:center;color:var(--soft)}
+#secret{display:none;text-align:center}
+#secret.show{display:block;animation:fade 1s}
+#secret .big{font-size:1.5rem;color:var(--accent)}
+footer{text-align:center;color:var(--soft);padding:20px 0}
+</style>
+</head>
+<body>
+<main class="locked" id="main">
+
+<section id="intro">
+  <div class="phone">
+    <small>Appel entrant</small>
+    <div class="ring">📞</div>
+    <div class="who">Mymy 💙</div>
+    <div>« Alors Kael, toujours blacklist ? »</div>
+    <button class="answer" id="answerBtn">Décrocher</button>
+  </div>
+  <p class="sub">Comme au premier jour… décroche, il y a une surprise.</p>
+</section>
+
+<section id="hero">
+  <h1>Joyeux anniversaire, Mymy !</h1>
+  <p class="sub">Le 28 octobre, c’est ton jour, et ce site est rien que pour toi.</p>
+  <p style="font-size:2rem">🌷💙🌷</p>
+</section>
+
+<section class="msg">
+  <h2>Un petit mot pour toi</h2>
+  <div class="card">
+    <p>Mymy, on s’est tellement chamaillés pour savoir lequel de nous deux était le plus fan de l’autre… Alors aujourd’hui je tranche : c’est moi. (Je sais, tu vas dire que c’est toi.)</p>
+    <p>Tu es la meilleure personne que j’aie rencontrée. J’adore chaque moment passé avec toi : nos appels, notre série, les jeux vidéo, nos moments de complicité, même nos moments plus intimes. Je ne regrette absolument rien.</p>
+    <p>Je t’aime, Mymy, et je t’aimerai pour toujours. Tu peux me faire confiance : je veux être le meilleur pour toi.</p>
+    <p>Tu te doutes bien que je n’ai pas fait ce site tout seul, mais tout ce qu’il y a à l’intérieur vient de moi et de ma tête.</p>
+    <p>Et oui Mymy, encore une fois : joyeux anniversaire mon amour. Je t’aime.</p>
+    <p class="sign">Ton Lili 💙</p>
+  </div>
+</section>
+
+<section>
+  <h2>Notre histoire</h2>
+  <div class="tl">
+    <div class="ev"><b>Le stage de découverte 👮</b>Esmé demande à Kael un stage de découverte à la police. Il promet d’en parler à ses supérieurs.</div>
+    <div class="ev"><b>Blacklist 🚨</b>Un 1vs1 dans un appartement avec un autre flic plus tard, Kael est blacklist. Esmé l’appelle, apprend la nouvelle… et se moque de lui pendant au moins 5 jours. Le début de tout.</div>
+    <div class="ev"><b>Je viens te voir 🌆</b>Un jour, Kael est allé voir Esmé en jeu. Depuis, on n’a plus jamais arrêté de traîner ensemble.</div>
+    <div class="ev"><b>Un mois plus tard 🎭</b>Le RP et la vraie vie ont commencé à se mélanger. On était amis, et c’était déjà précieux.</div>
+    <div class="ev"><b>Qui est le plus fan ? 💬</b>Par message, on se chamaillait pour savoir qui était le plus fan de l’autre. Petit à petit, ça a viré au flirt, cette fois pour de vrai.</div><div class="ev"><b>La première nuit en appel 🌙</b>On parlait de quelqu’un qui n’arrivait pas à dormir seul. « Avec toi, ça ne me dérangerait pas. » « Moi non plus. » Un film lancé ensemble, et on s’est endormis en appel. C’est là que j’ai compris que je t’aimais.</div>
+    <div class="ev"><b>Aujourd’hui 💙</b>Plus un seul appel dodo raté. On joue, on regarde Dexter, on s’endort ensemble. Il ne manque plus que de se retrouver au même endroit.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Pourquoi je t’aime</h2>
+  <div class="reasons">
+    <div><span>1.</span>Ta personnalité. Oui, ce n’est pas original, mais je m’en fous : tu as une personnalité unique et je devais te le dire.</div>
+    <div><span>2.</span>Ta façon d’être.</div>
+    <div><span>3.</span>Ta façon de m’aimer.</div>
+    <div><span>4.</span>Ta voix. Je bave littéralement.</div>
+    <div><span>5.</span>Tes yeux. Ils sont magnifiques.</div>
+  </div>
+</section>
+
+<section>
+  <h2>Mymy est remplie de bave</h2>
+  <div class="vid">
+    <video controls playsinline preload="metadata" src="clips/bave1.mp4"></video>
+    <video controls playsinline preload="metadata" src="clips/bave2.mp4"></video>
+    <video controls playsinline preload="metadata" src="clips/bave3.mp4"></video>
+    <video controls playsinline preload="metadata" src="clips/bave4.mp4"></video>
+    <video controls playsinline preload="metadata" src="clips/bave5.mp4"></video>
+  </div>
+  <h2 style="margin-top:48px">Mymy presque ou déjà complètement inlove 💙</h2>
+  <div class="vid">
+    <video controls playsinline preload="metadata" src="clips/inlove1-fortnite.mp4"></video>
+    <video controls playsinline preload="metadata" src="clips/inlove2-gta.mp4"></video>
+    <p class="sub" style="text-align:center">Dit en GTA RP, mais on mélange tout depuis le début, et je m’en fous.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Ta surprise</h2>
+  <div class="card">
+    <p style="text-align:center">Fais éclore les 7 tulipes en tapant dessus 🌱</p>
+    <div id="garden"></div>
+    <p id="count">0 / 7</p>
+    <div id="secret">
+      <p class="big">Tu as fait fleurir tout le bouquet 🌷</p>
+      <p>Je ne peux pas t’envoyer de vraies tulipes bleues aujourd’hui, alors prends celles-ci, avec mon cœur autour de chacune.</p>
+      <p><b>Je t’aime, Mymy.</b> Joyeux anniversaire 💙</p>
+      <p>Et une petite chanson pour toi 🎶</p>
+      <p><a href="https://open.spotify.com/track/6gCtEY1GPfxR6KVctYZT10" target="_blank" rel="noopener" style="display:inline-block;background:var(--accent);color:#fff;text-decoration:none;border-radius:999px;padding:10px 22px">▶ À toi, Monsieur Nov &amp; Franglish (Spotify)</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>Fait avec amour, rien que pour toi 💙</footer>
+</main>
+
+<script>
+(function(){
+  var main=document.getElementById('main');
+  var hero=document.getElementById('hero');
+  document.getElementById('answerBtn').addEventListener('click',function(){
+    main.classList.remove('locked');
+    document.getElementById('intro').style.display='none';
+    hero.classList.add('show');
+    window.scrollTo(0,0);
+  });
+  var garden=document.getElementById('garden'),count=document.getElementById('count'),n=0,total=7;
+  for(var i=0;i<total;i++){
+    var b=document.createElement('button');
+    b.className='tulip';b.type='button';b.textContent='🌱';b.setAttribute('aria-label','Tulipe');
+    b.addEventListener('click',function(){
+      if(this.classList.contains('open'))return;
+      this.classList.add('open');this.textContent='🌷';n++;
+      count.textContent=n+' / '+total;
+      if(n===total){document.getElementById('secret').classList.add('show');count.style.display='none';}
+    });
+    garden.appendChild(b);
+  }
+})();
+</script>
+</body>
+</html>
